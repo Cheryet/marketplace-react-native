@@ -1,24 +1,48 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Button,
+  Alert,
+  Image,
+} from "react-native";
 
 export default function App() {
-  let x = 1;
-
   console.log("App executed");
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text>Hello World!</Text>
+      <Image style={styles.image} source={require("./assets/icon.png")} />
       <StatusBar style="auto" />
-    </View>
+      <Button
+        title="Button"
+        onPress={() => {
+          console.log("Button Clicked");
+        }}
+        color="black"
+      ></Button>
+      <Button
+        title="Alert"
+        onPress={() => {
+          Alert.alert("My Alert", "This is a Alert");
+        }}
+      ></Button>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "dodgerblue",
     alignItems: "center",
     justifyContent: "center",
+  },
+  image: {
+    height: 200,
+    width: 200,
   },
 });
