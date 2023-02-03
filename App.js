@@ -45,4 +45,7 @@ const styles = StyleSheet.create({
     height: 200,
     width: 200,
   },
+  button: {
+    backgroundColor: "white",
+  },
 });
